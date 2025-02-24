@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TempManager.Models
 {
@@ -8,6 +9,7 @@ namespace TempManager.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "The Date field is required")]
+        [Remote("CheckDate", "Validation")]
         public DateTime? Date { get; set; }
 
         [Required(ErrorMessage = "The low temperature field is required.")]
